@@ -1,0 +1,20 @@
+﻿@model ChatRoomViewModel
+@{
+    ViewData["Title"] = "Chat Rooms - Create";
+}
+<h1>@ViewData["Title"]</h1>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Name, htmlAttributes: new { @class = "form-control", @placeholder = "Enter title", @maxlength="50" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })
+        @Html.TextAreaFor(model => model.Description, htmlAttributes: new { @class = "form-control", @maxlength="280", @rows="3" })
+    </div>
+    <button type="submit" class="btn btn-default btn-primary" style="margin-top: 5px">Submit</button>
+}

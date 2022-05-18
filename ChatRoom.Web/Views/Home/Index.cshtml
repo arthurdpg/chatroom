@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the ChatRoom application!</h1>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <p>In order to chat with your friends, it is necessary to <a href="@Url.Action("Account", "Identity")/Register">register yourself</a>.</p>
+    }
+
+</div>

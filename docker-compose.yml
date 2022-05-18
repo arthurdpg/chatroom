@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  chatroom.web:
+    image: ${DOCKER_REGISTRY-}chatroomweb
+    build:
+      context: .
+      dockerfile: ChatRoom.Web/Dockerfile
+  chatroom.sql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: ChatRoom.Sql
+  chatroom.mongo:
+    image: mongo
+    container_name: ChatRoom.Mongo
