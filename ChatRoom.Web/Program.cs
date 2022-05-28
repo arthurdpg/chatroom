@@ -1,6 +1,6 @@
+using ChatRoom.Application.Hubs;
 using ChatRoom.IoC;
 using ChatRoom.Web.Data;
-using ChatRoom.Web.Hubs;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

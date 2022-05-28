@@ -4,7 +4,7 @@
     {
         public PagingQueryParams()
         {
-            PageSize = 10;
+            PageSize = 50;
         }
 
         public int CurrentPage { get; set; }

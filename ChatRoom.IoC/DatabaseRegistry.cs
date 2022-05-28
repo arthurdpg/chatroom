@@ -21,6 +21,7 @@ namespace ChatRoom.IoC
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IRoomQueries, RoomQueries>();
+            services.AddScoped<IPostQueries, PostQueries>();
         }
 
         public static void ApplyDatabaseMigrations(this IServiceProvider services)

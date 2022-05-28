@@ -1,5 +1,6 @@
 ﻿using ChatRoom.Data.Contexts;
 using ChatRoom.Domain.Models;
+using ChatRoom.Domain.Queries;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatRoom.Data.Queries
@@ -18,6 +19,15 @@ namespace ChatRoom.Data.Queries
         public virtual async Task<TEntity> FindById(object id)
         {
             return await DbSet.FindAsync(id);
+        }
+
+        protected async Task<PagingQueryResult<TEntity>> Paginate(IQueryable<TEntity> query, PagingQueryParams parameters)
+        {
+            var count = query.Count();
+            var initPage = parameters.CurrentPage > 0 ? parameters.CurrentPage - 1 : 0;
+            var result = await query.Skip(initPage * parameters.PageSize).Take(parameters.PageSize).ToListAsync();
+
+            return new PagingQueryResult<TEntity>(result, count, parameters.PageSize);
         }
     }
 }

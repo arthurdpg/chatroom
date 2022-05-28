@@ -2,24 +2,21 @@
 {
     public class PagingQueryResult<T>
     {
-        public IReadOnlyCollection<T> Content { get; }
-        public int ContentLength { get; set; }
+        public IReadOnlyCollection<T> Records { get; }
         public int PageSize { get; } = 50;
-        public int TotalElements { get; }
-        public int TotalPages => PageSize.Equals(0) ? 1 : (int)Math.Ceiling((decimal)TotalElements / PageSize);
-        public PagingQueryResult(List<T> content, int numberOfElements, int pageSize)
+        public int TotalRecords { get; }
+        public int TotalPages => PageSize.Equals(0) ? 1 : (int)Math.Ceiling((decimal)TotalRecords / PageSize);
+        public PagingQueryResult(List<T> records, int totalRecords, int pageSize)
         {
-            Content = content;
-            ContentLength = content.Count;
-            TotalElements = numberOfElements;
+            Records = records;
+            TotalRecords = totalRecords;
             PageSize = pageSize;
         }
 
-        public PagingQueryResult(List<T> content)
+        public PagingQueryResult(List<T> records)
         {
-            Content = content;
-            ContentLength = content.Count;
-            TotalElements = content.Count;
+            Records = records;
+            TotalRecords = records.Count;
         }
     }
 }

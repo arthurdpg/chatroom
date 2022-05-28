@@ -10,10 +10,12 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChatRoom.Application\ChatRoom.Application.csproj" />
     <ProjectReference Include="..\ChatRoom.Bus\ChatRoom.Bus.csproj" />
     <ProjectReference Include="..\ChatRoom.Data\ChatRoom.Data.csproj" />
     <ProjectReference Include="..\ChatRoom.Domain\ChatRoom.Domain.csproj" />

@@ -9,6 +9,9 @@ namespace ChatRoom.Domain.Commands.Room.Validators
             RuleFor(x => x.UserId)
                 .NotEmpty().WithMessage(ValidationMessages.Required);
 
+            RuleFor(x => x.UserId)
+                .MaximumLength(255).WithMessage(ValidationMessages.MaxLength);
+
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage(ValidationMessages.Required);
 

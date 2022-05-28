@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220526022810_UpdatePostTable.cs" />
+    <Compile Remove="Migrations\20220526022810_UpdatePostTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Contexts\ChatRoomContext.cs~RF443bb362.TMP" />
   </ItemGroup>
 

@@ -2,15 +2,15 @@
 
 namespace ChatRoom.Domain.Commands.Post.Validators
 {
-    public class CreatePostValidator : AbstractValidator<CreatePostCommand>
+    public class CreateCommandPostValidator : AbstractValidator<CreateCommandPostCommand>
     {
-        public CreatePostValidator()
+        public CreateCommandPostValidator()
         {
             RuleFor(x => x.UserId)
                 .NotEmpty().WithMessage(ValidationMessages.Required);
 
             RuleFor(x => x.UserId)
-                .MaximumLength(255).WithMessage(ValidationMessages.MaxLength);
+                 .MaximumLength(255).WithMessage(ValidationMessages.MaxLength);
 
             RuleFor(x => x.RoomId)
                 .NotEmpty().WithMessage(ValidationMessages.Required);
@@ -20,6 +20,9 @@ namespace ChatRoom.Domain.Commands.Post.Validators
 
             RuleFor(x => x.Content)
                 .MaximumLength(280).WithMessage(ValidationMessages.MaxLength);
+
+            RuleFor(x => x.Content)
+                .Matches(@"^\/[a-zA-Z0-9]+=\S+$");
 
             RuleFor(x => x.ChatHub)
                 .NotNull().WithMessage(ValidationMessages.Required);

@@ -2,23 +2,27 @@
 {
     public class Post : IDomainModel
     {
-        public Post(Guid id, string userId, Guid roomId, DateTime created, string content)
+        public Post(Guid id, string from, string to, Guid roomId, DateTime created, string content)
         {
             Id = id;
-            UserId = userId;
+            From = from;
+            To = to;
             RoomId = roomId;
             Created = created;
             Content = content;
+            IsCommand = IsCommandPost();
         }
 
         public Guid Id { get; private set; }
-        public string UserId { get; private set; }
+        public string From { get; private set; }
+        public string To { get; private set; }
         public Guid RoomId { get; private set; }
         public Room Room { get; private set; }
         public DateTime Created { get; private set; }
         public string Content { get; private set; }
+        public bool IsCommand { get; private set; }
 
-        public bool IsCommand()
+        private bool IsCommandPost()
         {
             return !string.IsNullOrEmpty(Content) && Content.StartsWith("/");
         }

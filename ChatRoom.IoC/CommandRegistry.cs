@@ -1,4 +1,5 @@
-﻿using ChatRoom.Bus;
+﻿using ChatRoom.Application.Hubs;
+using ChatRoom.Bus;
 using ChatRoom.Domain.CommandHandlers.Post;
 using ChatRoom.Domain.CommandHandlers.Room;
 using ChatRoom.Domain.Commands;
@@ -17,6 +18,7 @@ namespace ChatRoom.IoC
             services.AddScoped<IMediatorHandler, InMemoryBus>();
             services.AddScoped<IRequestHandler<CreateRoomCommand, CommandResult>, CreateRoomHandler>();
             services.AddScoped<IRequestHandler<CreatePostCommand, CommandResult>, CreatePostHandler>();
+            services.AddScoped<IRequestHandler<CreateCommandPostCommand, CommandResult>, CreateCommandPostHandler>();
         }
     }
 }

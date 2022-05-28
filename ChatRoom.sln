@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.IoC", "ChatRoom.Io
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Test", "ChatRoom.Test\ChatRoom.Test.csproj", "{7EB52F07-0E6A-4533-81B6-DB580C869AAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Web", "ChatRoom.Web\ChatRoom.Web.csproj", "{10EAE828-A1ED-4E78-8B96-B2DBCB1CEB1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Web", "ChatRoom.Web\ChatRoom.Web.csproj", "{10EAE828-A1ED-4E78-8B96-B2DBCB1CEB1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Bus", "ChatRoom.Bus\ChatRoom.Bus.csproj", "{71569A0C-123D-439F-8EDD-78E72BAD5177}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Bus", "ChatRoom.Bus\ChatRoom.Bus.csproj", "{71569A0C-123D-439F-8EDD-78E72BAD5177}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Application", "ChatRoom.Application\ChatRoom.Application.csproj", "{54FDD818-5191-425D-A932-792464487B29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{71569A0C-123D-439F-8EDD-78E72BAD5177}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71569A0C-123D-439F-8EDD-78E72BAD5177}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71569A0C-123D-439F-8EDD-78E72BAD5177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54FDD818-5191-425D-A932-792464487B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54FDD818-5191-425D-A932-792464487B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54FDD818-5191-425D-A932-792464487B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54FDD818-5191-425D-A932-792464487B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,10 +12,17 @@ namespace ChatRoom.Data.Mappings
 
             builder.Property(x => x.Id);
 
-            builder.Property(x => x.UserId)
+            builder.Property(x => x.From)
                 .HasColumnType("varchar(255)")
                 .HasMaxLength(255)
-                .IsRequired();
+                .IsRequired(false)
+                .HasDefaultValue(null);
+
+            builder.Property(x => x.To)
+                .HasColumnType("varchar(255)")
+                .HasMaxLength(255)
+                .IsRequired(false)
+                .HasDefaultValue(null);
 
             builder.Property(x => x.Created)
                .IsRequired();
