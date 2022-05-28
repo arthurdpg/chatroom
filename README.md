@@ -1,6 +1,7 @@
 # ChatRoom
 
 The ChatRoom is a browser-based chat application using .NET.
+
 It allows several users to talk in a chatroom and also to get stock quotes from an API using a specific command.
 
 ## How the application is built :
